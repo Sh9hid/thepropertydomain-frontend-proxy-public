@@ -1,0 +1,1 @@
+import{i as e}from"./runtime-CXkrhpa9.js";var t=async()=>new WebSocket(e);export{t};

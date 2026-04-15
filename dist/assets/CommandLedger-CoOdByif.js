@@ -1,0 +1,1 @@
+import{n as e}from"./createLucideIcon-x8sN-Q_n.js";import"./runtime-tR9tG71_.js";import"./api-CC0UwpcU.js";import{ControlCenter as t}from"./ControlCenter-BFmpPYG_.js";var n=e(),r=()=>(0,n.jsx)(t,{});export{r as CommandLedger};
