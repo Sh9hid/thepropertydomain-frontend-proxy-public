@@ -1,0 +1,224 @@
+{
+  "workflow_name": "cotality_full_enrich",
+  "version": 1,
+  "site": "cotality",
+  "created_at": "2026-04-03T18:56:18.837865+00:00",
+  "updated_at": "2026-04-03T18:56:18.837865+00:00",
+  "entry_url_patterns": [
+    "https://rpp.corelogic.com.au/"
+  ],
+  "success_url_patterns": [
+    "/property"
+  ],
+  "required_inputs": [
+    "full_address",
+    "street",
+    "suburb",
+    "state",
+    "postcode"
+  ],
+  "steps": [
+    {
+      "type": "focus",
+      "target": {
+        "selectors": [
+          {
+            "type": "css",
+            "value": "#crux-multi-locality-search",
+            "weight": 1.0
+          },
+          {
+            "type": "css",
+            "value": "[placeholder=\"Search for an address, street name, suburb, postcode, council area or state\"]",
+            "weight": 0.9
+          },
+          {
+            "type": "placeholder",
+            "value": "Search for an address, street name, suburb, postcode, council area or state",
+            "weight": 0.86
+          },
+          {
+            "type": "role",
+            "value": "combobox",
+            "name": "",
+            "weight": 0.78
+          },
+          {
+            "type": "tag",
+            "value": "input",
+            "weight": 0.3
+          },
+          {
+            "type": "xpath",
+            "value": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+            "weight": 0.25
+          },
+          {
+            "type": "nearby_text",
+            "value": "\u200b",
+            "weight": 0.5
+          }
+        ],
+        "snapshot": {
+          "tag": "input",
+          "id": "crux-multi-locality-search",
+          "name": "",
+          "ariaLabel": "",
+          "placeholder": "Search for an address, street name, suburb, postcode, council area or state",
+          "type": "text",
+          "role": "combobox",
+          "text": "",
+          "value": "",
+          "cssPath": "#crux-multi-locality-search",
+          "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+          "nearbyText": [
+            "\u200b"
+          ],
+          "rect": {
+            "x": 218.5,
+            "y": 343.15625,
+            "width": 738.453125,
+            "height": 32.25
+          }
+        },
+        "page_hints": {
+          "url": "https://rpp.corelogic.com.au/",
+          "title": "RP Data"
+        }
+      }
+    },
+    {
+      "type": "fill",
+      "target": {
+        "selectors": [
+          {
+            "type": "css",
+            "value": "#crux-multi-locality-search",
+            "weight": 1.0
+          },
+          {
+            "type": "css",
+            "value": "[placeholder=\"Search for an address, street name, suburb, postcode, council area or state\"]",
+            "weight": 0.9
+          },
+          {
+            "type": "placeholder",
+            "value": "Search for an address, street name, suburb, postcode, council area or state",
+            "weight": 0.86
+          },
+          {
+            "type": "role",
+            "value": "combobox",
+            "name": "",
+            "weight": 0.78
+          },
+          {
+            "type": "tag",
+            "value": "input",
+            "weight": 0.3
+          },
+          {
+            "type": "xpath",
+            "value": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+            "weight": 0.25
+          },
+          {
+            "type": "nearby_text",
+            "value": "\u200b",
+            "weight": 0.5
+          }
+        ],
+        "snapshot": {
+          "tag": "input",
+          "id": "crux-multi-locality-search",
+          "name": "",
+          "ariaLabel": "",
+          "placeholder": "Search for an address, street name, suburb, postcode, council area or state",
+          "type": "text",
+          "role": "combobox",
+          "text": "",
+          "value": "74 Porpoise Crescent Bligh Park NSW 2756",
+          "cssPath": "#crux-multi-locality-search",
+          "xpath": "/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/input[1]",
+          "nearbyText": [
+            "\u200b"
+          ],
+          "rect": {
+            "x": 218.5,
+            "y": 343.15625,
+            "width": 738.453125,
+            "height": 32.25
+          }
+        },
+        "page_hints": {
+          "url": "https://rpp.corelogic.com.au/",
+          "title": "RP Data"
+        }
+      },
+      "value_template": "{{full_address}}"
+    },
+    {
+      "type": "press",
+      "key": "Enter"
+    },
+    {
+      "type": "wait_for_navigation",
+      "timeout": 10000,
+      "success_url_patterns": [
+        "/property"
+      ],
+      "fallback_texts": [
+        "property",
+        "estimate",
+        "value",
+        "beds",
+        "baths"
+      ]
+    },
+    {
+      "type": "collect_first_level_tabs"
+    },
+    {
+      "type": "visit_tab"
+    },
+    {
+      "type": "expand_sections"
+    },
+    {
+      "type": "extract_sections"
+    }
+  ],
+  "success_criteria": {
+    "requires_fields": [
+      "property_type",
+      "bedrooms",
+      "bathrooms",
+      "car_spaces",
+      "land_size_sqm",
+      "building_size_sqm",
+      "last_sale_price",
+      "last_sale_date",
+      "estimated_value_low",
+      "estimated_value_high"
+    ],
+    "url_patterns": [
+      "/property"
+    ]
+  },
+  "page_signatures": {
+    "search": {
+      "entry_title": "RP Data",
+      "success_title": ""
+    },
+    "extract": {
+      "entry_title": "RP Data",
+      "success_title": ""
+    }
+  },
+  "extract_targets": {},
+  "workflow_refs": [
+    "cotality_search_property.json",
+    "cotality_extract_property_intelligence.json"
+  ],
+  "last_validated_at": null
+}

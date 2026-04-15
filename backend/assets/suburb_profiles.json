@@ -1,0 +1,128 @@
+{
+  "box_hill_nsw_2765": {
+    "name": "Box Hill",
+    "postcode": "2765",
+    "lga": "The Hills Shire",
+    "region": "North West Growth Area, Sydney",
+    "tagline": "Sydney's fastest-growing masterplanned community",
+    "hook_openers": [
+      "Stake your claim in Sydney's fastest-growing suburb.",
+      "Secure a build-ready block in the heart of Box Hill's new heart.",
+      "Your family's next chapter starts in Box Hill.",
+      "One of the last premium blocks in a sold-out precinct.",
+      "Position yourself at the centre of the North West Growth Area."
+    ],
+    "schools": {
+      "primary": [
+        {"name": "Box Hill Public School", "distance_km": 1.6, "selective": false},
+        {"name": "Santa Sophia Catholic College (K-12)", "distance_km": 2.8, "selective": false}
+      ],
+      "secondary": [
+        {"name": "Rouse Hill High School", "distance_km": 4.2, "catchment": true},
+        {"name": "Santa Sophia Catholic College", "distance_km": 2.8, "catchment": false}
+      ],
+      "catchment_primary": "Box Hill Public School",
+      "catchment_secondary": "Rouse Hill High School"
+    },
+    "transport": {
+      "metro": {
+        "station": "Rouse Hill Metro",
+        "minutes_drive": 8,
+        "line": "Sydney Metro North West",
+        "to_cbd_min": 52
+      },
+      "cbd_drive_min": 48,
+      "parramatta_drive_min": 28,
+      "norwest_drive_min": 15,
+      "m7_motorway_min": 12,
+      "badgerys_creek_airport_min": 35
+    },
+    "amenities": [
+      {"name": "Rouse Hill Town Centre", "type": "shopping", "distance_km": 5.2, "detail": "Coles, Woolworths, Kmart, Event Cinemas, 230+ stores"},
+      {"name": "Box Hill City Centre (under construction)", "type": "future_centre", "distance_km": 0.8, "detail": "Future town heart with retail, dining, health precinct"},
+      {"name": "Cattai Creek Regional Park", "type": "nature", "distance_km": 3.1, "detail": "Walking trails, bushland, picnic areas"},
+      {"name": "Stonecutters Ridge Golf Club", "type": "lifestyle", "distance_km": 6.4, "detail": "18-hole championship course"},
+      {"name": "Rouse Hill Anglican College", "type": "school", "distance_km": 5.8, "detail": "Private K-12"}
+    ],
+    "infrastructure_story": "Box Hill is the centrepiece of the NSW Government's North West Growth Area plan. Over $1.3 billion in new schools, roads, and the Box Hill town centre are being delivered by 2030. The Sydney Metro extension has cut commute times to the CBD in half, and new motorway upgrades (M7/M2 interchange) are unlocking 15-minute access to Parramatta and 48-minute access to the Sydney CBD.",
+    "growth_story": "Box Hill's population is projected to grow from 4,200 (2021 census) to over 30,000 by 2036, making it one of the fastest-growing suburbs in NSW. Land values have risen approximately 42% over the past five years, outpacing most Sydney growth corridors.",
+    "buyer_personas": {
+      "first_home_buyer": "Box Hill qualifies for NSW First Home Buyer Assistance — no transfer duty on new land under $800K. Close to everything a growing family needs.",
+      "investor": "Strong rental demand from tradies, nurses, and young professionals commuting to Norwest and Parramatta. Rental yields 3.8-4.2% gross on completed H&L builds.",
+      "downsizer": "Level blocks, quiet cul-de-sacs, and walk-to-cafes lifestyle without the Rouse Hill price tag. Single-level home designs are popular."
+    },
+    "stock_context": "Quality 300-600sqm blocks in Box Hill are selling within 45-60 days on average. Registered, titled lots like this one are increasingly rare."
+  },
+  "north_kellyville_nsw_2155": {
+    "name": "North Kellyville",
+    "postcode": "2155",
+    "lga": "The Hills Shire",
+    "region": "The Hills, North West Sydney",
+    "tagline": "Established prestige meets new-release value",
+    "hook_openers": [
+      "A rare opportunity in Sydney's most sought-after Hills corridor.",
+      "Build your forever home in prestigious North Kellyville.",
+      "Established schools, Metro access, and a block ready to build.",
+      "Claim a larger block in an established Hills enclave.",
+      "Your premium Hills address awaits."
+    ],
+    "schools": {
+      "primary": [
+        {"name": "Kellyville Ridge Public School", "distance_km": 2.3, "selective": false},
+        {"name": "Sherwood Ridge Public School", "distance_km": 2.8, "selective": false}
+      ],
+      "secondary": [
+        {"name": "William Clarke College (private K-12)", "distance_km": 1.9, "catchment": false},
+        {"name": "Kellyville High School", "distance_km": 3.6, "catchment": true},
+        {"name": "Rouse Hill High School", "distance_km": 4.8, "catchment": false}
+      ],
+      "catchment_primary": "Kellyville Ridge Public School",
+      "catchment_secondary": "Kellyville High School"
+    },
+    "transport": {
+      "metro": {
+        "station": "Kellyville Metro",
+        "minutes_drive": 6,
+        "line": "Sydney Metro North West",
+        "to_cbd_min": 44
+      },
+      "cbd_drive_min": 42,
+      "parramatta_drive_min": 24,
+      "norwest_drive_min": 8,
+      "m7_motorway_min": 7,
+      "badgerys_creek_airport_min": 32
+    },
+    "amenities": [
+      {"name": "Rouse Hill Town Centre", "type": "shopping", "distance_km": 3.8, "detail": "Coles, Woolworths, Kmart, Event Cinemas, 230+ stores"},
+      {"name": "Kellyville Village", "type": "shopping", "distance_km": 2.5, "detail": "Woolworths, cafes, medical, specialty stores"},
+      {"name": "Norwest Business Park", "type": "employment", "distance_km": 7.2, "detail": "Major Sydney employment hub — 30,000+ jobs"},
+      {"name": "Bernie Mullane Sports Complex", "type": "lifestyle", "distance_km": 3.4, "detail": "Pools, gym, tennis, cricket"},
+      {"name": "The Hills Grammar School", "type": "school", "distance_km": 6.1, "detail": "Elite private K-12"}
+    ],
+    "infrastructure_story": "North Kellyville is part of the established Hills Shire — one of Sydney's most liveable LGAs. The Sydney Metro North West delivered direct rail access in 2019, slashing CBD commute times. Ongoing upgrades to Old Windsor Road, Memorial Avenue, and new schools are reinforcing the area as a prestige family destination.",
+    "growth_story": "North Kellyville has seen a 38% rise in median land values over five years, driven by Metro connectivity and school catchment strength. The suburb consistently ranks in the top 10% of NSW postcodes for household income and education levels.",
+    "buyer_personas": {
+      "first_home_buyer": "NSW First Home Buyer Assistance applies to new land and H&L under $800K. Walk to primary school, drive 6 minutes to Metro.",
+      "investor": "Premium tenant pool from Norwest professionals. Gross yields 3.5-4.0% on completed builds with strong capital growth track record.",
+      "upgrader": "Larger lot sizes than neighbouring Rouse Hill, with equal Metro access and superior school catchments. The Hills' prestige address at a build-your-own price point."
+    },
+    "stock_context": "New-release blocks in North Kellyville are tightly held and consistently achieve above-reserve results. Titled, registered land with this street profile is rare in 2026."
+  },
+  "_default": {
+    "name": "",
+    "tagline": "A premium build-ready block in Sydney's growth corridor",
+    "hook_openers": [
+      "Secure your build-ready block in one of Sydney's most sought-after corridors.",
+      "A rare opportunity to build your forever home.",
+      "Titled, registered, and ready to start building."
+    ],
+    "schools": {"catchment_primary": "", "catchment_secondary": "", "primary": [], "secondary": []},
+    "transport": {"cbd_drive_min": 0, "parramatta_drive_min": 0, "norwest_drive_min": 0},
+    "amenities": [],
+    "infrastructure_story": "",
+    "growth_story": "",
+    "buyer_personas": {"first_home_buyer": "", "investor": "", "upgrader": ""},
+    "stock_context": ""
+  },
+  "_compliance_footer": "All information provided has been obtained from sources we believe to be reliable; however, we cannot guarantee its accuracy. Prospective purchasers are advised to carry out their own investigations. Images, dimensions and details are indicative only. Lot dimensions are subject to final survey.\n\nNitin Puri  |  Laing+Simmons Oakville | Windsor  |  oakville@lsre.com.au  |  0430 042 041"
+}

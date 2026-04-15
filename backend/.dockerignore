@@ -1,0 +1,81 @@
+# ── Virtual environments ──────────────────────────────────────────────────────
+venv/
+stealth_venv/
+.venv/
+
+# ── Python cache ──────────────────────────────────────────────────────────────
+__pycache__/
+.pytest_cache/
+.pytest-tmp/
+.pytest_tmp/
+*.pyc
+*.pyo
+*.pyd
+
+# ── Secrets / local config ────────────────────────────────────────────────────
+.env
+.env.*
+token_cache.bin
+
+# ── Local databases (mounted as volumes in prod) ──────────────────────────────
+*.db
+*.db-*
+*.db-journal
+*.db-wal
+*.db-shm
+test_dbs/
+
+# ── Generated / ephemeral output (mounted as volumes in prod) ─────────────────
+generated_reports/
+generated_brochures/
+report_packs/
+mirror_storage/
+streetview_images/
+
+# ── Logs ─────────────────────────────────────────────────────────────────────
+*.log
+
+# ── Backup files ─────────────────────────────────────────────────────────────
+*.bak
+*.backup
+
+# ── Test files ────────────────────────────────────────────────────────────────
+test_*.py
+tests/
+
+# ── Docs (not needed at runtime) ─────────────────────────────────────────────
+docs/
+*.md
+
+# ── Developer tooling (not imported by API server) ────────────────────────────
+# scraper.py is intentionally kept — main.py imports scrape_nsw_probate_market from it.
+# tools/migrate_coach_tables.py is kept — main.py + app_factory.py import create_coach_tables from it.
+tools/
+!tools/__init__.py
+!tools/migrate_coach_tables.py
+auto_scrape.py
+fetch_listing_photos.py
+scrape_streetview.py
+purge_images.py
+run_domain_enrichment.py
+link_ls_stock_photos.py
+get_progress.py
+ingest_stock_intel.py
+system_sync.py
+debug_*.py
+cluster_fix_*.py
+deep_debug_*.py
+
+# ── Asset factories / standalone generators (not imported by API server) ──────
+# pdf_generator.py is intentionally kept — form_engine, integrations, listing_workflow import it.
+asset_factory_v2/
+customer_pack_engine.py
+report_pack_engine.py
+generate_outreach_assets.py
+sovereign_engine.py
+ai_market_intelligence.py
+cotality_client.py
+
+# ── Miscellaneous ─────────────────────────────────────────────────────────────
+.git/
+.gitignore

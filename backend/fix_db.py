@@ -1,0 +1,128 @@
+import asyncio
+from sqlalchemy.ext.asyncio import create_async_engine
+from sqlalchemy import text
+
+DATABASE_URL = "postgresql+asyncpg://postgres:postgres_pass@localhost:5432/leads_db"
+engine = create_async_engine(DATABASE_URL)
+
+async def add_cols():
+    async with engine.begin() as conn:
+        print("Checking columns...")
+        
+        # All columns
+        all_cols = [
+            ("last_contacted_at", "TEXT"),
+            ("follow_up_due_at", "TEXT"),
+            ("status", "TEXT DEFAULT 'captured'"),
+            ("price_drop_count", "INTEGER DEFAULT 0"),
+            ("last_activity_type", "TEXT DEFAULT ''"),
+            ("signal_status", "TEXT DEFAULT ''"),
+            ("domain_listing_id", "TEXT"),
+            ("domain_enriched_date", "TEXT"),
+            ("days_on_market", "INTEGER DEFAULT 0"),
+            ("listing_headline", "TEXT"),
+            ("h3index", "TEXT"),
+            ("rea_listing_id", "TEXT"),
+            ("last_called_date", "TEXT"),
+            ("relisted", "INTEGER DEFAULT 0"),
+            ("list_date", "TEXT"),
+            ("date_of_birth", "TEXT"),
+            ("id4me_enriched", "INTEGER DEFAULT 0"),
+            ("id4me_enriched_at","TEXT"),
+            ("id4me_last_seen",  "TEXT"),
+            ("canonical_address", "TEXT"),
+            ("address_unit", "TEXT"),
+            ("street_number", "TEXT"),
+            ("street_name", "TEXT"),
+            ("street_type", "TEXT"),
+            ("state", "TEXT"),
+            ("country_code", "TEXT"),
+            ("mailing_address", "TEXT"),
+            ("mailing_address_matches_property", "INTEGER DEFAULT 1"),
+            ("absentee_owner", "INTEGER DEFAULT 0"),
+            ("likely_landlord", "INTEGER DEFAULT 0"),
+            ("likely_owner_occupier", "INTEGER DEFAULT 0"),
+            ("owner_occupancy_status", "TEXT"),
+            ("owner_first_name", "TEXT"),
+            ("owner_last_name", "TEXT"),
+            ("owner_persona", "TEXT"),
+            ("alternate_phones", "TEXT DEFAULT '[]'"),
+            ("alternate_emails", "TEXT DEFAULT '[]'"),
+            ("phone_status", "TEXT"),
+            ("phone_line_type", "TEXT"),
+            ("email_status", "TEXT"),
+            ("do_not_call", "INTEGER DEFAULT 0"),
+            ("consent_status", "TEXT"),
+            ("contactability_tier", "TEXT"),
+            ("contactability_reasons", "TEXT DEFAULT '[]'"),
+            ("property_type", "TEXT"),
+            ("parcel_lot", "TEXT"),
+            ("parcel_plan", "TEXT"),
+            ("title_reference", "TEXT"),
+            ("ownership_duration_years", "REAL"),
+            ("tenure_bucket", "TEXT"),
+            ("estimated_value_low", "INTEGER"),
+            ("estimated_value_high", "INTEGER"),
+            ("valuation_date", "TEXT"),
+            ("rental_estimate_low", "INTEGER"),
+            ("rental_estimate_high", "INTEGER"),
+            ("yield_estimate", "REAL"),
+            ("last_listing_status", "TEXT"),
+            ("last_listing_date", "TEXT"),
+            ("sale_history", "TEXT DEFAULT '[]'"),
+            ("listing_status_history", "TEXT DEFAULT '[]'"),
+            ("nearby_sales", "TEXT DEFAULT '[]'"),
+            ("deterministic_tags", "TEXT DEFAULT '[]'"),
+            ("seller_intent_signals", "TEXT DEFAULT '[]'"),
+            ("refinance_signals", "TEXT DEFAULT '[]'"),
+            ("ownership_notes", "TEXT"),
+            ("source_provenance", "TEXT DEFAULT '[]'"),
+            ("enrichment_status", "TEXT"),
+            ("enrichment_last_synced_at", "TEXT"),
+            ("research_status", "TEXT"),
+            ("contacts", "JSONB DEFAULT '[]'::jsonb"),
+            ("potential_contacts", "JSONB DEFAULT '[]'::jsonb"),
+            ("notes", "TEXT"),
+            ("estimated_completion", "TEXT"),
+            ("follow_up_due_at", "TEXT"),
+            ("last_activity_type", "TEXT DEFAULT ''"),
+            ("queue_bucket", "TEXT"),
+            ("lead_archetype", "TEXT"),
+            ("contactability_status", "TEXT"),
+            ("owner_verified", "INTEGER DEFAULT 0"),
+            ("contact_role", "TEXT"),
+            ("cadence_name", "TEXT"),
+            ("cadence_step", "INTEGER DEFAULT 0"),
+            ("next_action_at", "TEXT"),
+            ("next_action_type", "TEXT"),
+            ("next_action_channel", "TEXT"),
+            ("next_action_title", "TEXT"),
+            ("next_action_reason", "TEXT"),
+            ("next_message_template", "TEXT"),
+            ("last_outcome", "TEXT"),
+            ("last_outcome_at", "TEXT"),
+            ("objection_reason", "TEXT"),
+            ("preferred_channel", "TEXT"),
+            ("strike_zone", "TEXT"),
+            ("touches_14d", "INTEGER DEFAULT 0"),
+            ("touches_30d", "INTEGER DEFAULT 0"),
+            ("do_not_contact_until", "TEXT"),
+            ("stage_note", "TEXT"),
+            ("stage_note_history", "JSONB DEFAULT '[]'::jsonb"),
+            ("activity_log", "JSONB DEFAULT '[]'::jsonb"),
+            ("cadid", "TEXT"),
+            ("route_queue", "TEXT"),
+            ("last_settlement_date", "TEXT"),
+            ("last_inbound_at", "TEXT"),
+            ("last_outbound_at", "TEXT"),
+        ]
+        
+        for col, ctype in all_cols:
+            try:
+                print(f"Adding {col}...")
+                await conn.execute(text(f"ALTER TABLE leads ADD COLUMN IF NOT EXISTS {col} {ctype}"))
+            except Exception as e:
+                print(f"Failed {col}: {e}")
+
+if __name__ == "__main__":
+    asyncio.run(add_cols())
