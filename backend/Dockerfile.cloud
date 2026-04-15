@@ -1,7 +1,7 @@
 # Cloud variant — identical multi-stage strategy as Dockerfile.
 # Kept as a separate file in case cloud-specific overrides are needed later.
 # ── Stage 1: builder ─────────────────────────────────────────────────────────
-FROM python:3.11-slim AS builder
+FROM python:3.10-slim AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
@@ -24,11 +24,11 @@ RUN pip install --no-cache-dir --prefix=/install -r requirements-prod.txt
 
 
 # ── Stage 2: runtime ─────────────────────────────────────────────────────────
-FROM python:3.11-slim
+FROM python:3.10-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/install/lib/python3.11/site-packages \
+    PYTHONPATH=/install/lib/python3.10/site-packages \
     PATH=/install/bin:$PATH
 
 WORKDIR /app
