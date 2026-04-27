@@ -10,9 +10,13 @@
   respond @health "ok" 200
 
   @backend path /api/* /ws/* /listing_photos/* /stock-images/* /stock_photos/* /streetview_images/*
-  reverse_proxy @backend {$API_UPSTREAM:https://api.thepropertydomain.com.au}
+  handle @backend {
+    reverse_proxy {$API_UPSTREAM:https://api.thepropertydomain.com.au}
+  }
 
-  root * /srv
-  try_files {path} {path}/ /index.html
-  file_server
+  handle {
+    root * /srv
+    try_files {path} {path}/ /index.html
+    file_server
+  }
 }

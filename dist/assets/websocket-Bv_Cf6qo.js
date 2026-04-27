@@ -1,1 +1,0 @@
-import{a as e}from"./runtime-S_Dsn8Eu.js";var t=async()=>new WebSocket(e);export{t};

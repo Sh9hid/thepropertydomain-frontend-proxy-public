@@ -1,1 +1,0 @@
-import{a as e}from"./runtime-BPf0k2zr.js";var t=async()=>new WebSocket(e);export{t};

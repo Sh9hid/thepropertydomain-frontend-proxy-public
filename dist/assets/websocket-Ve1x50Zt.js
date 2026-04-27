@@ -1,1 +1,0 @@
-import{i as e}from"./runtime-DaTUrPeG.js";var t=async()=>new WebSocket(e);export{t};
