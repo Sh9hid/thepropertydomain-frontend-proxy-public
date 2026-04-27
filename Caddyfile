@@ -11,7 +11,9 @@
 
   @backend path /api/* /ws/* /listing_photos/* /stock-images/* /stock_photos/* /streetview_images/*
   handle @backend {
-    reverse_proxy {$API_UPSTREAM:https://api.thepropertydomain.com.au}
+    reverse_proxy {$API_UPSTREAM:https://api.thepropertydomain.com.au} {
+      header_up Host {upstream_hostport}
+    }
   }
 
   handle {
